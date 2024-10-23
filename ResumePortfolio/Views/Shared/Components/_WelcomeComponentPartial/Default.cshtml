@@ -1,0 +1,19 @@
+﻿@model IEnumerable<Welcome>
+
+
+
+@foreach(var item in Model){
+<div class="col-lg-4 order-lg-1">
+      <span class="section-subtitle" data-aos="fade-up">@item.Title</span>
+   <h1 class="mb-4" data-aos="fade-up">
+      @item.Desciription1
+   </h1>
+   <p data-aos="fade-up">
+    @item.Desciription2
+   </p>
+   <p class="mt-5" data-aos="fade-up">
+         <a  href="~/tema/esahinresume.pdf" class="btn btn-get-started" download="">Cv İndir</a>
+      </p>
+</div>
+}
+
