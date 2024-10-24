@@ -5,7 +5,7 @@ namespace ResumePortfolio.Controllers
 {
    public class HomeController : Controller
    {
-      ResumePortfoliocontext context=new ResumePortfoliocontext();
+      ResumePortfoliocontext _context=new ResumePortfoliocontext();
       public IActionResult Index()
       {
         
@@ -13,8 +13,21 @@ namespace ResumePortfolio.Controllers
       }
       public IActionResult Welcome()
       {
-         var values=context.welcomes.ToList();
+        
          return View();
+      }
+      public IActionResult About()
+      {
+         return View();
+      }
+      public IActionResult Services() 
+      {
+         return View();
+      }
+      public IActionResult Portfolio()
+      {
+         var values = _context.portfolios.ToList();
+         return View(values);
       }
    }
 }

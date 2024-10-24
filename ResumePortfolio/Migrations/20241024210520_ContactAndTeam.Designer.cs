@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ResumePortfolio.DataAccessLayer.Context;
 
@@ -10,9 +11,10 @@ using ResumePortfolio.DataAccessLayer.Context;
 namespace ResumePortfolio.Migrations
 {
     [DbContext(typeof(ResumePortfoliocontext))]
-    partial class ResumePortfoliocontextModelSnapshot : ModelSnapshot
+    [Migration("20241024210520_ContactAndTeam")]
+    partial class ContactAndTeam
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

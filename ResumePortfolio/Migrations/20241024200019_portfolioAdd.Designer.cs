@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ResumePortfolio.DataAccessLayer.Context;
 
@@ -10,9 +11,10 @@ using ResumePortfolio.DataAccessLayer.Context;
 namespace ResumePortfolio.Migrations
 {
     [DbContext(typeof(ResumePortfoliocontext))]
-    partial class ResumePortfoliocontextModelSnapshot : ModelSnapshot
+    [Migration("20241024200019_portfolioAdd")]
+    partial class portfolioAdd
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -56,59 +58,6 @@ namespace ResumePortfolio.Migrations
                     b.HasKey("BlogPostsID");
 
                     b.ToTable("blogPosts");
-                });
-
-            modelBuilder.Entity("ResumePortfolio.DataAccessLayer.Entitiy.ContactLeft", b =>
-                {
-                    b.Property<int>("ContactLeftID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ContactLeftID"), 1L, 1);
-
-                    b.Property<string>("Description")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Email")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Location")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Phone")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Title")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("ContactLeftID");
-
-                    b.ToTable("contactLefts");
-                });
-
-            modelBuilder.Entity("ResumePortfolio.DataAccessLayer.Entitiy.ContactRight", b =>
-                {
-                    b.Property<int>("ContactRightID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ContactRightID"), 1L, 1);
-
-                    b.Property<string>("Email")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Message")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("NameSurname")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Subject")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("ContactRightID");
-
-                    b.ToTable("contactRights");
                 });
 
             modelBuilder.Entity("ResumePortfolio.DataAccessLayer.Entitiy.OurMission", b =>
@@ -231,37 +180,6 @@ namespace ResumePortfolio.Migrations
                     b.HasKey("TabMenu2ID");
 
                     b.ToTable("tabMenu2s");
-                });
-
-            modelBuilder.Entity("ResumePortfolio.DataAccessLayer.Entitiy.Team", b =>
-                {
-                    b.Property<int>("TeamID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("TeamID"), 1L, 1);
-
-                    b.Property<string>("BtnUrl")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Desciription")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("ImageUrl")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("MyProperty")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("NameSurname")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Position")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("TeamID");
-
-                    b.ToTable("teams");
                 });
 
             modelBuilder.Entity("ResumePortfolio.DataAccessLayer.Entitiy.Tools1", b =>
