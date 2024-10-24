@@ -116,10 +116,15 @@ namespace ResumePortfolio.Migrations
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("TabMenu2ID")
+                        .HasColumnType("int");
+
                     b.Property<string>("Title")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("TabMenu1ID");
+
+                    b.HasIndex("TabMenu2ID");
 
                     b.ToTable("tabMenu1s");
                 });
@@ -247,6 +252,22 @@ namespace ResumePortfolio.Migrations
                     b.HasKey("WhyUsID");
 
                     b.ToTable("whyUs");
+                });
+
+            modelBuilder.Entity("ResumePortfolio.DataAccessLayer.Entitiy.TabMenu1", b =>
+                {
+                    b.HasOne("ResumePortfolio.DataAccessLayer.Entitiy.TabMenu2", "TabMenu2")
+                        .WithMany("tabMenu1s")
+                        .HasForeignKey("TabMenu2ID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("TabMenu2");
+                });
+
+            modelBuilder.Entity("ResumePortfolio.DataAccessLayer.Entitiy.TabMenu2", b =>
+                {
+                    b.Navigation("tabMenu1s");
                 });
 #pragma warning restore 612, 618
         }
