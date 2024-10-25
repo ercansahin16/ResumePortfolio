@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using ResumePortfolio.DataAccessLayer.Context;
+using ResumePortfolio.DataAccessLayer.Entitiy;
 
 namespace ResumePortfolio.Controllers
 {
@@ -26,8 +27,25 @@ namespace ResumePortfolio.Controllers
       }
       public IActionResult Portfolio()
       {
-         var values = _context.portfolios.ToList();
+         var values = _context.portfolios?.ToList();
          return View(values);
       }
+
+      public IActionResult Team()
+      {
+         var values=_context.teams?.ToList();
+         return View(values);
+      }
+      public IActionResult Blog()
+      {
+         return View();
+      }
+      public IActionResult Contact(ContactRight contactRight)
+      {
+         _context.contactRights.Add(contactRight);
+         _context.SaveChanges();
+         return View();
+      }
+   
    }
 }
