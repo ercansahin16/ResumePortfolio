@@ -22,6 +22,7 @@ namespace ResumePortfolio.DataAccessLayer.Context
       public DbSet<Team>? teams { get; set; }
       public DbSet<ContactLeft>? contactLefts { get; set; }
       public DbSet<ContactRight>? contactRights { get; set; }
+      public DbSet<Login>? logins { get; set; }
 
    }
 }
