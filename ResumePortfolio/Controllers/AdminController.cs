@@ -38,13 +38,13 @@ namespace ResumePortfolio.Controllers
         var values= _context.blogPosts.ToList();
          return View(values);
       }
-      public IActionResult BlogPostUpdate(int id)
+      public IActionResult BlogUpdate(int id)
       {
          var values = _context.blogPosts.Find(id);
          return View(values);
       }
       [HttpPost]
-      public IActionResult BlogPostUpdate(BlogPosts blogPosts)
+      public IActionResult BlogUpdate(BlogPosts blogPosts)
       {
          var img = "/tema/assets/img/mediüm/" + blogPosts.Img;
          blogPosts.Img = img;

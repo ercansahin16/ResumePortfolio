@@ -1,0 +1,55 @@
+﻿
+@{
+    ViewData["Title"] = "BlogUpdate";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<a href="/Admin/BlogPost" class="btn" style="color:black;background-color: orange;margin-top:15px">Geri Git </a>
+
+<div style="display:flex;flex-direction:column;justify-content:center;align-items: center;">
+   <div style="border:solid 1px grey;padding:25px 200px">
+
+      <h2>Güncelleme Formu</h2>
+      <form method="post">
+         <table>
+            <tr>
+               <td><input type="hidden" name="BlogPostsID" /></td>
+            </tr>
+            <tr>
+               <td><label for="id">Resim:</label></td>
+               <td><input type="file" style="width:500px" id="id" name="Img" required></td>
+            </tr>
+            <tr>
+               <td><label for="catTitle">Url:</label></td>
+               <td><input type="text" style="width:500px" id="catTitle" name="catTitle" value="@Model.catTitle" required></td>
+            </tr>
+            <tr>
+               <td><label for="dateTitle">Eklenme Tarihi:</label></td>
+               <td><input type="text" style="width:500px" id="dateTitle" name="DateTitle" value="@Model.DateTitle" required></td>
+            </tr>
+            <tr>
+               <td><label for="hrefTitle">DateTitle:</label></td>
+               <td><input type="text" style="width:500px" id="hrefTitle" name="HrefTitle" value="@Model.HrefTitle" required></td>
+            </tr>
+            <tr>
+               <td><label for="pTitle">Başlık:</label></td>
+               <td><input type="text" style="width:500px" id="pTitle" name="PTitle" value="@Model.PTitle" required></td>
+            </tr>
+            <tr>
+               <td><label for="teamImg">Ekip Resim:</label></td>
+               <td><input type="file" style="width:500px" id="teamImg" name="TeamImg" required></td>
+            </tr>
+            <tr>
+               <td><label for="nameSurname">AdSoyad:</label></td>
+               <td><input type="text" style="width:500px" id="nameSurname" name="NameSurname" value="@Model.NameSurname" required></td>
+            </tr>
+            <tr>
+               <td><label for="position">Unvan:</label></td>
+               <td><input type="text" style="width:500px" id="position" name="Position" value="@Model.Position" required></td>
+            </tr>
+         </table>
+         <button type="submit" class="btn" style="width:100%;background-color: orange;margin-top:15px">Güncelle</button>
+      </form>
+   </div>
+</div>
+
